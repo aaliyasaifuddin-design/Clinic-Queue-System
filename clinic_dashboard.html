@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clinic Dashboard</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Doctor Dashboard</h1>
+
+    <div class="container">
+        <h2>Welcome, {{ doctor_name }}!</h2>
+        <h3>Manage Your Clinics</h3>
+
+        {% if clinics %}
+            {% for clinic in clinics %}
+                <div class="clinic-card">
+                    <h3>{{ clinic.clinic_name }}</h3>
+                    <p><strong>City:</strong> {{ clinic.city }}</p>
+                    <p><strong>Address:</strong> {{ clinic.address }}</p>
+                    <p><strong>Clinic ID:</strong> {{ clinic.clinic_id }}</p>
+                    
+
+                    <form method="POST"
+                          action="{{ url_for('call_next_patient', clinic_id=clinic.clinic_id) }}">
+                        <button type="submit">
+                            Call Next Patient
+                        </button>
+                    </form>
+
+                    <p>
+                        <a href="{{ url_for('display', clinic_id=clinic.clinic_id) }}"
+                           target="_blank">
+                            View Live Patient Display
+                        </a>
+                    </p>
+
+                    <p>
+                        <a href="{{ url_for('view_patients', clinic_id=clinic.clinic_id) }}">
+                            View Patients
+                        </a>
+                    </p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>You have not registered a clinic yet.</p>
+        {% endif %}
+
+        <p>
+            <a href="{{ url_for('register_clinic') }}">
+                Register Another Clinic
+            </a>
+        </p>
+        <p>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</p>
+    </div>
+</body>
+</html>

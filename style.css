@@ -1,0 +1,216 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #176b5b;
+    text-align: center;
+    margin-top: 50px;
+}
+
+p {
+    text-align: center;
+    color: #444444;
+    font-size: 18px;
+}
+
+.container {
+    background-color: white;
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.container h2 {
+    color: #176b5b;
+}
+
+.container p {
+    color: #555555;
+    font-size: 16px;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+.container form label {
+    font-weight: bold;
+    color: #333333;
+}
+
+.container form input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.container form button {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    background-color: #176b5b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container form button:hover {
+    background-color: #105044;
+}
+
+.container a {
+    display: inline-block;
+    background-color: #176b5b;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.container a:hover {
+    background-color: #105044;
+}
+
+/* Password field with eye icon */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 45px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    color: #666;
+    border: none;
+    padding: 5px;
+    margin: 0;
+    width: auto;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.password-toggle:hover {
+    background: transparent;
+    color: #176b5b;
+}
+
+/* Fix eye button inside password field */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-wrapper input {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 48px;
+}
+
+.password-wrapper .password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    left: auto;
+    transform: translateY(-50%);
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    color: #666;
+    border: none !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.password-wrapper .password-toggle:hover {
+    background: #f0f0f0 !important;
+    color: #176b5b;
+}
+/* Professional Clinic Dashboard */
+
+.clinic-card {
+    background: #ffffff;
+    border: 1px solid #dce8e5;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.clinic-card h3 {
+    color: #176b5b;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.clinic-card p {
+    font-size: 15px;
+    text-align: left;
+    margin: 10px 0;
+}
+
+.clinic-card form {
+    max-width: 100%;
+    margin: 15px 0;
+}
+
+.clinic-card form button {
+    background-color: #176b5b;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.clinic-card a {
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.container h3 {
+    color: #444444;
+}
+
+.container {
+    max-width: 850px;
+}

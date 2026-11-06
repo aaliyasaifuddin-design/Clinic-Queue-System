@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ clinic.clinic_name }} - Patient Display</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #10243a;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        h1 {
+            color: #57e3c2;
+            font-size: 34px;
+        }
+
+        .box {
+            max-width: 650px;
+            margin: 25px auto;
+            padding: 25px;
+            background: #1d3853;
+            border-radius: 16px;
+        }
+
+        .label {
+            color: #c5d5e5;
+            font-size: 19px;
+        }
+
+        .name {
+            font-size: 30px;
+            font-weight: bold;
+            margin: 12px 0;
+        }
+
+        .info {
+            font-size: 18px;
+            margin: 8px;
+        }
+
+        .next {
+            color: #ffd166;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>{{ clinic.clinic_name }}</h1>
+    <p>LIVE PATIENT QUEUE DISPLAY</p>
+
+    <div class="box">
+        <div class="label">CURRENT PATIENT — IN CABIN</div>
+
+        {% if current_patient %}
+            <div class="name">{{ current_patient.patient_name }}</div>
+            <div class="info">
+                Patient ID: {{ current_patient.clinic_patient_no }}
+            </div>
+        {% else %}
+            <div class="name">No patient in cabin</div>
+        {% endif %}
+    </div>
+
+    <div class="box">
+        <div class="label next">NEXT PATIENT</div>
+
+        {% if next_patient %}
+            <div class="name">{{ next_patient.patient_name }}</div>
+            <div class="info">
+                Patient ID: {{ next_patient.clinic_patient_no }}
+            </div>
+            <div class="info next">
+    Estimated time until your turn: {{ waiting_time }} minutes
+</div>
+        {% else %}
+            <div class="name">No patients waiting</div>
+        {% endif %}
+    </div>
+
+    <p>Patients waiting: {{ waiting_count }}</p>
+
+<p>
+    <a href="{{ url_for('dashboard') }}" style="color:white;">
+        Doctor Dashboard
+    </a>
+</p>
+
+<p>
+    <a href="{{ url_for('view_patients', clinic_id=clinic.clinic_id) }}"
+       style="color:white;">
+        View Patients Queue
+    </a>
+</p>
+    <script>
+    setInterval(function() {
+        window.location.reload();
+    }, 5000);
+</script>
+</body>
+</html>
+

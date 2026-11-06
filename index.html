@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Patient Registration</h1>
+    
+    <div class="container">
+        <h2>Enter Patient Details</h2>
+        
+<form action="{{ url_for('register', clinic_id=clinic.clinic_id) }}" method="POST" id="patientForm">
+    
+<p><strong>Clinic:</strong> {{ clinic.clinic_name }}</p>
+
+    <label>Patient Name:</label>
+    <input type="text" name="patient_name" required>
+
+    <label>Patient Age:</label>
+    <input type="number" name="patient_age" required>
+
+    <label>Phone Number:</label>
+    <input type="tel" name="phone" required>
+
+    <button type="submit">Register Patient</button>
+</form>
+
+
+</div>
+</body>
+</html>
+<script>
+    const patientForm = document.getElementById("patientForm");
+
+    patientForm.addEventListener("submit", function () {
+        const button = patientForm.querySelector("button[type='submit']");
+
+        button.disabled = true;
+        button.innerText = "Registering...";
+    });
+</script>
